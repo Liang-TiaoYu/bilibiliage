@@ -1,6 +1,7 @@
 import datetime
+
 x = int(input('请输入1-10的数（大于10或小于1会导致计算错误）'))
-if x>10 or x<1:
+if x > 10 or x < 1:
     print('都告诉你了还能输错')
     exit()
 print("正在计算中，程序将实时展示计算数据")
@@ -24,15 +25,15 @@ elif y == '没过':
 else:
     print('都告诉你了还能输错')
     exit()
-a = int(input('你的出生年是：（四位数）'))
-if a<1000:
+a = input('你的出生年是：（四位数）')
+if not 4 == len(a):
     print('都告诉你了还能输错')
     exit()
-elif a>datetime.datetime.now().year:
+elif int(a) > datetime.datetime.now().year:
     print('所以你来自未来？')
     exit()
 num = sum
-sum = sum - a
+sum = sum - int(a)
 print('%s-%s=%s' % (num, a, sum))
 num = x
 x = x * 100
