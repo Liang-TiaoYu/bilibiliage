@@ -1,6 +1,7 @@
 import datetime
+
 x = int(input('Please enter a number from 1 to 10 (greater than 10 or less than 1 will cause calculation error)'))
-if x>10 or x<1:
+if x > 10 or x < 1:
     print('I told you, you can still lose.')
     exit()
 print("In the process of computing, the program will display the calculated data in real time.")
@@ -24,15 +25,15 @@ elif y == 'failed':
 else:
     print('I told you, you can still lose.')
     exit()
-a = int(input('Your year of birth is: (four digits)'))
-if a<1000:
+a = input('Your year of birth is: (four digits)')
+if not 4 == len(a):
     print('I told you, you can still lose.')
     exit()
-elif a>datetime.datetime.now().year:
+elif int(a) > datetime.datetime.now().year:
     print("So you're from the future?")
     exit()
 num = sum
-sum = sum - a
+sum = sum - int(a)
 print('%s-%s=%s' % (num, a, sum))
 num = x
 x = x * 100
